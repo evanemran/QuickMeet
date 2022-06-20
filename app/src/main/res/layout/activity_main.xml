@@ -4,36 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_dark"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         app:title="@string/app_name"
+        app:titleTextColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/banner_container"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/quickmeet"
+            android:elevation="8dp"
+            android:scaleType="fitCenter"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
         <LinearLayout
-            android:layout_centerInParent="true"
-            android:layout_margin="16dp"
+            android:id="@+id/join_container"
+            android:layout_below="@+id/banner_container"
             android:orientation="horizontal"
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/editText_room"
-                android:hint="Room ID"
-                android:padding="8dp"
+            <androidx.cardview.widget.CardView
+                android:textAllCaps="false"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#383CC1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1">
+                <TextView
+                    android:text="Start a Meeting"
+                    android:textColor="@color/white"
+                    android:padding="16dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:textAllCaps="false"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#1FAA59"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:text="Join a Meeting"
+                    android:textColor="@color/white"
+                    android:padding="16dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/join_container"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="@color/blue_dark"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/editText_room"
+                    android:hint="Custom Room ID"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.cardview.widget.CardView>
             <ImageButton
                 android:id="@+id/imageButton_join"
                 android:src="@drawable/ic_arrow"
                 android:scaleType="fitCenter"
-                android:background="@color/black"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_burron"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 app:tint="@color/white" />
